@@ -12,6 +12,8 @@ namespace REDIS.Interface.Configuration
         {
             RedisConfig.StartRedis(services, configuration);
 
+            services.AddSwaggerConfig();
+
             services.AddControllers().AddNewtonsoftJson();
 
             services.AddCors(options =>
@@ -25,8 +27,11 @@ namespace REDIS.Interface.Configuration
 
                 options.AddPolicy("Production",
                     builder => builder
-                        .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .WithOrigins("https://meusistema.com.br", "https://meuoutrosistema.com.br")
+                        .WithMethods("GET", "OPTIONS")
+                        .WithOrigins("https://localhost:7001", 
+                                     "http://localhost:7000", 
+                                     "https://meusistema.com.br", 
+                                     "https://meuoutrosistema.com.br")
                         .AllowAnyHeader());
             });
 
@@ -48,7 +53,7 @@ namespace REDIS.Interface.Configuration
                 endpoints.MapControllers();
             });
 
-            //app.UseSwaggerConfig(provider);
+            app.UseSwaggerConfig();
 
             return app;
         }

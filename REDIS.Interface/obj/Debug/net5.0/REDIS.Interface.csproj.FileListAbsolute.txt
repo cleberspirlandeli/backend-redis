@@ -30,3 +30,8 @@ C:\Estudos\REDIS.Interface\REDIS.Interface\obj\Debug\net5.0\REDIS.Interface.dll
 C:\Estudos\REDIS.Interface\REDIS.Interface\obj\Debug\net5.0\ref\REDIS.Interface.dll
 C:\Estudos\REDIS.Interface\REDIS.Interface\obj\Debug\net5.0\REDIS.Interface.pdb
 C:\Estudos\REDIS.Interface\REDIS.Interface\obj\Debug\net5.0\REDIS.Interface.genruntimeconfig.cache
+C:\Estudos\REDIS.Interface\REDIS.Interface\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Estudos\REDIS.Interface\REDIS.Interface\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Estudos\REDIS.Interface\REDIS.Interface\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Estudos\REDIS.Interface\REDIS.Interface\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Estudos\REDIS.Interface\REDIS.Interface\obj\Debug\net5.0\REDIS.Interface.MvcApplicationPartsAssemblyInfo.cs

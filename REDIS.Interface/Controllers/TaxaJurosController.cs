@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -27,14 +28,20 @@ namespace REDIS.Interface.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Retorna a taxa de juros atual com alguns detalhes
+        /// </summary>
+        /// <returns>Retorna uma classe TaxaJuros</returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetTaxaJuros()
         {
 
-            var key = new ChaveTaxaJuros().GetKeyJurosComposto();
             var taxaJuros = new TaxaJuros();
             using (var redisClient = new RedisClient(_configuration.GetValue<string>("Host_Redis")))
             {
+                var key = ChaveTaxaJuros.GetKeyJurosComposto();
                 taxaJuros = redisClient.Get<TaxaJuros>(key);
             }
 

@@ -19,12 +19,11 @@ namespace REDIS.Interface.Configuration
                 Tipo = (int)TipoTaxaJurosEnum.Composto
             };
 
-            var keyTaxa = new ChaveTaxaJuros().GetKeyJurosComposto();
 
-            //using (var redisClient = new RedisClient(_host))
             using (var redisClient = new RedisClient(configuration.GetValue<string>("Host_Redis")))
             {
-                redisClient.Set<TaxaJuros>(keyTaxa, taxaJuros);
+                var key = ChaveTaxaJuros.GetKeyJurosComposto();
+                redisClient.Set<TaxaJuros>(key, taxaJuros);
             }
         }
     }
